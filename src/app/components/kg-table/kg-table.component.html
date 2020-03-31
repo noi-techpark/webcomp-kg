@@ -1,0 +1,21 @@
+<div *ngIf="!finished">
+  Loading...
+</div>
+
+<div *ngIf="errorMessage">
+  {{ errorMessage }}
+</div>
+
+<div *ngIf="results">
+  <table mat-table [dataSource]="results.results.bindings" class="mat-elevation-z8">
+    <ng-container [matColumnDef]="varName" *ngFor="let varName of results.head.vars">
+      <th mat-header-cell *matHeaderCellDef> {{varName}} </th>
+      <td mat-cell *matCellDef="let mapping"> {{mapping[varName]?.value}} </td>
+    </ng-container>
+<!--    ; sticky: true-->
+    <tr mat-header-row *matHeaderRowDef="results.head.vars"></tr>
+    <tr mat-row *matRowDef="let row; columns: results.head.vars;"></tr>
+  </table>
+
+</div>
+

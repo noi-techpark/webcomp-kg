@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Example Website with Web Components for Knowledge Graphs</title>
+  <script src="webcomp-kg.js"></script>
+  <link rel="stylesheet" href="webcomp-kg.css">
+</head>
+<body>
+<kg-widget view="gallery" endpoint='https://sparql.opendatahub.bz.it/sparql' query="PREFIX : <http://noi.example.org/ontology/odh#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX schema: <http://schema.org/>
+
+SELECT ?widgetImage ?widgetLabel
+WHERE {
+  ?s a schema:SkiResort ;
+     schema:name ?widgetLabel ;
+     geo:asWKT ?pos ;
+     schema:geo [ schema:elevation ?maxElevation ] ;
+     schema:image ?widgetImage ;
+     schema:isPartOf ?skiRegion.
+  ?skiRegion a :SkiRegion ;
+     schema:name ?regionName.
+} "></kg-widget>
+</body>
+</html>
