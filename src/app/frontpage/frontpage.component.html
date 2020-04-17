@@ -1,0 +1,75 @@
+<kg-widget view="gallery" endpoint='https://sparql.opendatahub.bz.it/sparql' query="PREFIX : <http://noi.example.org/ontology/odh#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX schema: <http://schema.org/>
+
+SELECT ?widgetImage ?widgetLabel
+WHERE {
+  ?s a schema:SkiResort ;
+     schema:name ?widgetLabel ;
+     geo:asWKT ?pos ;
+     schema:geo [ schema:elevation ?maxElevation ] ;
+     schema:image ?widgetImage ;
+     schema:isPartOf ?skiRegion.
+  ?skiRegion a :SkiRegion ;
+     schema:name ?regionName.
+} "></kg-widget>
+
+<kg-widget view="table" endpoint='https://sparql.opendatahub.bz.it/sparql' query="PREFIX schema: <http://schema.org/>
+    PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+    SELECT ?h ?pos ?posLabel ?posColor
+    WHERE {
+    ?h a schema:LodgingBusiness ;
+       geo:asWKT ?pos ;
+       schema:name ?posLabel ;
+       schema:address ?a .
+  FILTER (lang(?posLabel) = 'de')
+  # Colors
+  OPTIONAL {
+  ?h a schema:Campground .
+  BIND('chlorophyll,0.5' AS ?posColor) # Green
+  }
+  OPTIONAL {
+  ?h a schema:BedAndBreakfast .
+  BIND('viridis,0.1' AS ?posColor) # Purple
+  }
+  OPTIONAL {
+  ?h a schema:Hotel .
+  BIND('jet,0.3' AS ?posColor) # Light blue
+  }
+  OPTIONAL {
+  ?h a schema:Hostel .
+  BIND('jet,0.8' AS ?posColor) # Red
+  }
+  }
+  LIMIT 500"></kg-widget>
+<kg-widget view="map" endpoint='https://sparql.opendatahub.bz.it/sparql' query="PREFIX schema: <http://schema.org/>
+    PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+    SELECT ?h ?pos ?posLabel ?posColor
+    WHERE {
+    ?h a schema:LodgingBusiness ;
+       geo:asWKT ?pos ;
+       schema:name ?posLabel ;
+       schema:address ?a .
+  FILTER (lang(?posLabel) = 'de')
+  # Colors
+  OPTIONAL {
+  ?h a schema:Campground .
+  BIND('chlorophyll,0.5' AS ?posColor) # Green
+  }
+  OPTIONAL {
+  ?h a schema:BedAndBreakfast .
+  BIND('viridis,0.1' AS ?posColor) # Purple
+  }
+  OPTIONAL {
+  ?h a schema:Hotel .
+  BIND('jet,0.3' AS ?posColor) # Light blue
+  }
+  OPTIONAL {
+  ?h a schema:Hostel .
+  BIND('jet,0.8' AS ?posColor) # Red
+  }
+  }
+  LIMIT 500">
+
+</kg-widget>
+

@@ -1,0 +1,18 @@
+/*table, td, th {*/
+/*  border: 1px solid #ddd;*/
+/*  text-align: left;*/
+/*}*/
+
+/*th, td {*/
+/*  padding: 2px;*/
+/*  text-align: left;*/
+/*}*/
+
+/*table {*/
+/*  border-collapse: collapse;*/
+/*  width: 100%;*/
+/*}*/
+
+table {
+  width: 100%;
+}
