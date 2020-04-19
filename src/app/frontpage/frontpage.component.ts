@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, Input, OnInit, ViewEncapsulation} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 
 
 @Component({

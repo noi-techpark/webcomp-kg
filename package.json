@@ -7,7 +7,9 @@
     "build": "ng build --prod --output-hashing=none && cat dist/webcomp-kg/runtime-es2015.js dist/webcomp-kg/polyfills-es2015.js  dist/webcomp-kg/scripts.js dist/webcomp-kg/main-es2015.js > example/webcomp-kg.js && cp dist/webcomp-kg/styles.css example/webcomp-kg.css",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:stats": "ng build --stats-json",
+    "analyze": "webpack-bundle-analyzer dist/webcomp-kg/stats-es2015.json"
   },
   "private": true,
   "dependencies": {
