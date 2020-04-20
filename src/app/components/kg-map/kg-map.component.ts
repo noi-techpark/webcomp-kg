@@ -6,7 +6,7 @@ import OSM from 'ol/source/OSM';
 import VectorSource from 'ol/source/Vector';
 
 import {FullScreen, MousePosition, OverviewMap, Zoom} from 'ol/control';
-import {Circle, Fill, Style} from 'ol/style';
+import {Circle, Fill, Icon, Style} from 'ol/style';
 import {defaults as defaultInteractions} from 'ol/interaction';
 
 import {Point} from 'ol/geom';

@@ -5,7 +5,7 @@ import {SelectResultSet, SolutionMapping, TypedLiteral} from '../model/sparql';
 import WKT from 'ol/format/WKT';
 import {Feature} from 'ol';
 import {Observable} from 'rxjs';
-import {Circle, Fill, Style} from 'ol/style';
+import {Circle, Fill, Icon, Style} from 'ol/style';
 
 import {colorFromString} from './color-util';
 import {Geometry} from 'ol/geom';
@@ -57,6 +57,7 @@ export class SparqlService {
 
     const labelVar = wktVar + 'Label';
     const colorVar = wktVar + 'Color';
+    const iconVar = wktVar + 'Icon';
 
     const wktFormat = new WKT();
 
@@ -69,6 +70,14 @@ export class SparqlService {
             image: new Circle({
               radius: 4,
               fill: new Fill({color: colorFromString(m[colorVar].value)})
+            })
+          }));
+        }
+
+        if (m[iconVar]) {
+          feature.setStyle(new Style({
+            image: new Icon({
+              src: m[iconVar].value
             })
           }));
         }
