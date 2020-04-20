@@ -9,5 +9,5 @@ services:
     working_dir: /code
     command: npm run start
     ports:
-      - "8080:8080"
+      - "8999:8080"
     tty: true
