@@ -3,7 +3,6 @@
   "description": "A webcomponent for showing info from a Knowledge Graph",
   "descriptionAbstract": "A webcomponent for KG",
   "license": "Apache-2.0",
-  "repositoryUrl": "https://github.com/noi-techpark/webcomp-kg",
   "authors": [
     {
       "name": "Guohui Xiao",
@@ -19,7 +18,9 @@
     }
   ],
   "image": null,
-  "searchTags": [],
+  "searchTags": [
+    "Knowledge Graph"
+  ],
   "dist": {
     "basePath": "dist",
     "files": [
