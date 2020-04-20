@@ -8,7 +8,43 @@
 <body>
 <kg-widget view="map" endpoint='https://sparql.opendatahub.bz.it/sparql' query="PREFIX schema: <http://schema.org/>
     PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-    SELECT ?h ?pos ?posLabel ?posColor
+    SELECT ?h ?pos ?posLabel ?posColor ?posIcon
+    WHERE {
+    ?h a schema:LodgingBusiness ;
+       geo:asWKT ?pos ;
+       schema:name ?posLabel ;
+       schema:address ?a .
+  FILTER (lang(?posLabel) = 'de')
+  # Colors
+  OPTIONAL {
+  ?h a schema:Campground .
+  BIND('icons/accommodation_camping.glow.32.png' AS ?posIcon)
+  }
+  OPTIONAL {
+  ?h a schema:BedAndBreakfast .
+  BIND('icons/accommodation_youth_hostel.p.32.png' AS ?posIcon)
+  }
+  OPTIONAL {
+  ?h a schema:Hotel .
+  BIND('icons/accommodation_hotel.glow.32.png' AS ?posIcon)
+  }
+  OPTIONAL {
+  ?h a schema:Hostel .
+  BIND('icons/accommodation_hostel.glow.32.png' AS ?posIcon)
+  }
+  OPTIONAL {
+  # default
+  BIND('icons/accommodation_hotel2.glow.32.png' AS ?posIcon)
+  }
+  }
+  LIMIT 500">
+</kg-widget>
+
+<br>
+
+<kg-widget view="map" endpoint='http://localhost:8080/sparql' query="PREFIX schema: <http://schema.org/>
+    PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+    SELECT ?h ?pos ?posLabel ?posColor ?posIcon
     WHERE {
     ?h a schema:LodgingBusiness ;
        geo:asWKT ?pos ;
@@ -30,6 +66,10 @@
   }
   OPTIONAL {
   ?h a schema:Hostel .
+  BIND('jet,0.8' AS ?posColor) # Red
+  }
+  OPTIONAL {
+  # default
   BIND('jet,0.8' AS ?posColor) # Red
   }
   }

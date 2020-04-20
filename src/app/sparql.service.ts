@@ -7,6 +7,7 @@ import Feature from 'ol/Feature';
 import {Observable} from 'rxjs';
 import Circle from 'ol/style/Circle';
 import Fill from 'ol/style/Fill';
+import Icon from 'ol/style/Icon';
 import Style from 'ol/style/Style';
 
 import {colorFromString} from './color-util';
@@ -58,6 +59,7 @@ export class SparqlService {
 
     const labelVar = wktVar + 'Label';
     const colorVar = wktVar + 'Color';
+    const iconVar = wktVar + 'Icon';
 
     const wktFormat = new WKT();
 
@@ -70,6 +72,14 @@ export class SparqlService {
             image: new Circle({
               radius: 4,
               fill: new Fill({color: colorFromString(m[colorVar].value)})
+            })
+          }));
+        }
+
+        if (m[iconVar]) {
+          feature.setStyle(new Style({
+            image: new Icon({
+              src: m[iconVar].value
             })
           }));
         }

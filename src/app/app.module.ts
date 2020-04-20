@@ -19,7 +19,7 @@ import {NgImageSliderModule} from 'ng-image-slider';
   declarations: [FrontpageComponent, KgGalleryComponent, KgMapComponent, KgTableComponent, KgWidgetComponent],
   imports: [BrowserModule, FormsModule, HttpClientModule, BrowserAnimationsModule, MatTableModule, NgImageSliderModule],
   providers: [],
-  bootstrap: [FrontpageComponent]
+  // bootstrap: [FrontpageComponent]
 })
 export class AppModule  {
 
