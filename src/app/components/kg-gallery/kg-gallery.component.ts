@@ -1,7 +1,7 @@
 import {Component, Input, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {SelectResultSet} from '../../../model/sparql';
 import {SparqlService} from '../../sparql.service';
-import {NgImageSliderComponent} from "ng-image-slider";
+import {NgImageSliderComponent} from 'ng-image-slider';
 
 @Component({
   selector: 'kg-gallery',
@@ -33,11 +33,11 @@ export class KgGalleryComponent implements OnInit {
       .subscribe(value => {
         this.finished = true;
         this.results = value;
-        for (let m of this.results.results.bindings) {
+        for (const m of this.results.results.bindings) {
           this.imageObject.push({
-            image: m['widgetImage'].value,
-            thumbImage: m['widgetImage'].value,
-            title: m['widgetLabel'].value
+            image: m.widgetImage.value,
+            thumbImage: m.widgetImage.value,
+            title: m.widgetLabel.value
           })
         }
       }, error => {
