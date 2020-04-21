@@ -1,14 +1,16 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {SelectResultSet, SolutionMapping, TypedLiteral} from '../model/sparql';
+import {SelectResultSet, SolutionMapping} from '../model/sparql';
 
 import WKT from 'ol/format/WKT';
-import {Feature} from 'ol';
+import Feature from 'ol/Feature';
 import {Observable} from 'rxjs';
-import {Circle, Fill, Icon, Style} from 'ol/style';
+import Circle from 'ol/style/Circle';
+import Fill from 'ol/style/Fill';
+import Icon from 'ol/style/Icon';
+import Style from 'ol/style/Style';
 
 import {colorFromString} from './color-util';
-import {Geometry} from 'ol/geom';
 
 @Injectable({
   providedIn: 'root'

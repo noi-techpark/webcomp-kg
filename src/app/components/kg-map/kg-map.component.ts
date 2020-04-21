@@ -1,15 +1,23 @@
 import {AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {useGeographic} from 'ol/proj';
-import {Map, Overlay, View} from 'ol';
-import {Tile as TileLayer, Vector as VectorLayer} from 'ol/layer';
+import View from 'ol/View';
+import Overlay from 'ol/Overlay';
+import Map from 'ol/Map';
+import TileLayer from 'ol/layer/Tile';
+import VectorLayer from 'ol/layer/Vector';
 import OSM from 'ol/source/OSM';
 import VectorSource from 'ol/source/Vector';
 
-import {FullScreen, MousePosition, OverviewMap, Zoom} from 'ol/control';
-import {Circle, Fill, Icon, Style} from 'ol/style';
+import FullScreen from 'ol/control/FullScreen';
+import MousePosition from 'ol/control/MousePosition';
+import OverviewMap from 'ol/control/OverviewMap';
+import Zoom from 'ol/control/Zoom';
+import Circle from 'ol/style/Circle';
+import Fill from 'ol/style/Fill';
+import Style from 'ol/style/Style';
 import {defaults as defaultInteractions} from 'ol/interaction';
 
-import {Point} from 'ol/geom';
+import Point from 'ol/geom/Point';
 import {SparqlService} from '../../sparql.service';
 import {SelectResultSet} from '../../../model/sparql';
 import MapBrowserEvent from 'ol/MapBrowserEvent';
