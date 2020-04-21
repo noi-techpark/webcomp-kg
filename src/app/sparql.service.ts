@@ -30,15 +30,21 @@ export class SparqlService {
   constructor(private http: HttpClient) {
   }
 
-  select(sparql: string): Observable<SelectResultSet> {
-    const requestBody = 'query=' + encodeURIComponent(sparql) +
-      '&Accept=' + encodeURIComponent('application/sparql-results+json');
+  select_post(sparql: string): Observable<SelectResultSet> {
+    const requestBody = `query=${encodeURIComponent(sparql)}&Accept=${encodeURIComponent('application/sparql-results+json')}`;
     // console.log(requestBody);
     return this.http.post<SelectResultSet>(this._endpoint, requestBody, {
       headers: new HttpHeaders({
         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
       }),
     });
+  }
+
+  select(sparql: string): Observable<SelectResultSet> {
+    const requestBody = 'query=' + encodeURIComponent(sparql) +
+        '&Accept=' + encodeURIComponent('application/sparql-results+json');
+    // console.log(requestBody);
+    return this.http.get<SelectResultSet>(this._endpoint + '?' + requestBody);
   }
 
   asFeatures(results: SelectResultSet): Feature<any>[] {
