@@ -4,10 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --output-hashing=none && cat dist/webcomp-kg/runtime-es2015.js dist/webcomp-kg/polyfills-es2015.js  dist/webcomp-kg/scripts.js dist/webcomp-kg/main-es2015.js > example/webcomp-kg.js && cp dist/webcomp-kg/styles.css example/webcomp-kg.css",
+    "build": "ng build --prod --output-hashing none --single-bundle true && cat dist/webcomp-kg/main-es2015.js > example/webcomp-kg.js",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:stats": "ng build --stats-json",
+    "analyze": "webpack-bundle-analyzer dist/webcomp-kg/stats-es2015.json"
   },
   "private": true,
   "dependencies": {
@@ -30,6 +32,7 @@
     "document-register-element": ">=1.7.2 <=1.8.1",
     "jquery": "^3.4.1",
     "ng-image-slider": "^2.4.1",
+    "ngx-build-plus": "^9.0.6",
     "ol": "^6.2.2-dev.1585403261924",
     "popper.js": "^1.16.1",
     "rxjs": "~6.5.4",

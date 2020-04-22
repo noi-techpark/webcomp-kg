@@ -1,14 +1,16 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {SelectResultSet, SolutionMapping, TypedLiteral} from '../model/sparql';
+import {SelectResultSet, SolutionMapping} from '../model/sparql';
 
 import WKT from 'ol/format/WKT';
-import {Feature} from 'ol';
+import Feature from 'ol/Feature';
 import {Observable} from 'rxjs';
-import {Circle, Fill, Style} from 'ol/style';
+import Circle from 'ol/style/Circle';
+import Fill from 'ol/style/Fill';
+import Icon from 'ol/style/Icon';
+import Style from 'ol/style/Style';
 
 import {colorFromString} from './color-util';
-import {Geometry} from 'ol/geom';
 
 @Injectable({
   providedIn: 'root'
@@ -28,15 +30,21 @@ export class SparqlService {
   constructor(private http: HttpClient) {
   }
 
-  select(sparql: string): Observable<SelectResultSet> {
-    const requestBody = 'query=' + encodeURIComponent(sparql) +
-      '&Accept=' + encodeURIComponent('application/sparql-results+json');
+  select_post(sparql: string): Observable<SelectResultSet> {
+    const requestBody = `query=${encodeURIComponent(sparql)}&Accept=${encodeURIComponent('application/sparql-results+json')}`;
     // console.log(requestBody);
     return this.http.post<SelectResultSet>(this._endpoint, requestBody, {
       headers: new HttpHeaders({
         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
       }),
     });
+  }
+
+  select(sparql: string): Observable<SelectResultSet> {
+    const requestBody = 'query=' + encodeURIComponent(sparql) +
+        '&Accept=' + encodeURIComponent('application/sparql-results+json');
+    // console.log(requestBody);
+    return this.http.get<SelectResultSet>(this._endpoint + '?' + requestBody);
   }
 
   asFeatures(results: SelectResultSet): Feature<any>[] {
@@ -57,6 +65,7 @@ export class SparqlService {
 
     const labelVar = wktVar + 'Label';
     const colorVar = wktVar + 'Color';
+    const iconVar = wktVar + 'Icon';
 
     const wktFormat = new WKT();
 
@@ -69,6 +78,14 @@ export class SparqlService {
             image: new Circle({
               radius: 4,
               fill: new Fill({color: colorFromString(m[colorVar].value)})
+            })
+          }));
+        }
+
+        if (m[iconVar]) {
+          feature.setStyle(new Style({
+            image: new Icon({
+              src: m[iconVar].value
             })
           }));
         }

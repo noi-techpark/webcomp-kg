@@ -1,4 +1,4 @@
-import $ from 'jquery';
+
 import LibColor from 'color';
 import colormap from 'colormap';
 import _colorbrewer from 'colorbrewer';
@@ -10,9 +10,9 @@ const colorbrewer = {};
 for (const color in _colorbrewer) {
   if (_colorbrewer.hasOwnProperty(color)) {
     let mostSpecificScale = [];
-    $.each(_colorbrewer[color], (i, scale) => {
-      if (scale.length > mostSpecificScale.length) {
-        mostSpecificScale = scale;
+    Object.entries(_colorbrewer[color]).forEach( scale => {
+      if ((scale[1] as any[]).length > mostSpecificScale.length) {
+        mostSpecificScale = scale[1] as any[];
       }
     });
     colorbrewer[color.toLowerCase()] = mostSpecificScale;
