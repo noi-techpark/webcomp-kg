@@ -1,5 +1,10 @@
 # Web Components for Knowledge Graphs 
 
+This project is a webcomponent for Knowledge Graphs displaying data starting from a SPARQL endpoint.
+
+The demo shows how we can display the data obtained from the [Open Data Hub SPARQL endpoint](https://sparql.opendatahub.bz.it/)
+in three different formats: gallery, map and table.
+
 Live Demo: <https://raw.githack.com/ontopic-vkg/webcomp-kg/master/example/index.html>
 
 
@@ -14,15 +19,15 @@ Live Demo: <https://raw.githack.com/ontopic-vkg/webcomp-kg/master/example/index.
 
 ## Usage
 
-
-Include the webcompscript files `webcomp-kg.js` and `webcomp-kg.css`  in your HTML and define the web components like below. 
+Include the webcompscript files `webcomp-kg.js` in your HTML and define the web components like below. 
 A Web Component `<kg-widget>` with three visualizations (map, table, and image gallery) is defined. 
-
 
 ```html
 <body>
-<script src="webcomp-kg.js"></script>
-  <link rel="stylesheet" href="webcomp-kg.css">
+<head>
+  <title>Example Web Components for Knowledge Graphs</title>
+  <script src="webcomp-kg.js"></script>
+</head>
 <kg-widget view="map" endpoint='https://sparql.opendatahub.bz.it/sparql' query="PREFIX schema: <http://schema.org/>
     PREFIX geo: <http://www.opengis.net/ont/geosparql#>
     SELECT ?h ?pos ?posLabel ?posColor
@@ -79,7 +84,14 @@ Type: string
 
 The SPARQL query
 
-Type: int
+Type: string
+
+###Special features
+It is possible to personalize the pointers on the map
+using colors or custom icons as shown in the example for kg-map.
+
+You can run and test SPARQL queries on the endpoint at the [Open Data Hub Knowledge Graph Portal
+](https://sparql.opendatahub.bz.it/).
 
 ## Getting started
 
@@ -99,7 +111,7 @@ For a ready to use Docker environment with all prerequisites already installed a
 Get a copy of the repository:
 
 ```bash
-git clone https://github.com/noi-techpark/webcomp-kg
+git clone https://github.com/noi-techpark/webcomp-kg.git
 ```
 
 Change directory:
@@ -121,17 +133,15 @@ npm install
 Build and start the project:
 
 ```bash
-npm run build
+npm run start
 ```
+The application will be served and can be accessed at http://localhost:4200.
 
-Then you can see the examples at the `examples` directory.
+## Linting
 
-## Tests and linting
-
-The tests and the linting can be executed with the following commands:
+The linting can be executed with the following command:
 
 ```bash
-npm run test
 npm run lint
 ```
 
@@ -142,6 +152,8 @@ To create the distributable files, execute the following command:
 ```bash
 npm run build
 ```
+
+Then you can see the examples and the webcomponent script at the `example` directory.
 
 ## Docker environment
 
@@ -186,7 +198,7 @@ docker-compose run --rm app /bin/bash -c "..."
 Some examples are:
 
 ```bash
-docker-compose run --rm app /bin/bash -c "npm run test"
+docker-compose run --rm app /bin/bash -c "npm run build"
 ```
 
 ## Information
