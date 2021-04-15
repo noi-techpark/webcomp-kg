@@ -9,7 +9,7 @@ Copyright:
     Guohui Xiao <guohui.xiao@ontopic.biz>
 License: AGPL-3.0-or-later
 
-Files: src/*.md src/*.txt .env.* *.js.LICENSE.txt *.json
+Files: src/*.md src/*.txt .env.* *.js.LICENSE.txt *.json .env
 Copyright: 
     Sarah Komla-Ebri <sarah.komlaebri@ontopic.biz>
     Guohui Xiao <guohui.xiao@ontopic.biz>
