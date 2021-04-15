@@ -63,7 +63,7 @@ pipeline {
 				stage('Git Tag') {
 					steps {
 						sshagent (credentials: ['jenkins_github_ssh_key']) {
-							sh """
+							sh '''
 								WC_DIST_PATH=$(jq -r ".dist.basePath" wcs-manifest.json)
 								mkdir -p ~/.ssh
 								ssh-keyscan -H github.com >> ~/.ssh/known_hosts
@@ -78,7 +78,7 @@ pipeline {
 								git tag -a v${VERSION} -m "Version ${VERSION}"
 								git push ${WC_GIT_REMOTE} HEAD:${WC_GIT_BRANCH}
 								git push ${WC_GIT_REMOTE} v${VERSION}
-							"""
+							'''
 						}
 					}
 				}
