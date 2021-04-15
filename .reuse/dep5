@@ -1,7 +1,7 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: webcomp-parking
+Upstream-Name: webcomp-kg
 Upstream-Contact: Peter Moser <p.moser@noi.bz.it>
-Source: https://github.com/noi-techpark/webcomp-parking
+Source: https://github.com/noi-techpark/webcomp-kg
 
 Files: src/* work/* dist/webcomp-*.js webcomp-*.js e2e/* example/*
 Copyright: 
