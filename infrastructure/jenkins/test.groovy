@@ -2,7 +2,6 @@ pipeline {
 	agent any
 	environment {
 		DOCKER_IMAGE = "755952719952.dkr.ecr.eu-west-1.amazonaws.com/webcompbuild:latest"
-		HEREMAP_API_KEY = credentials("here-api-key")
 	}
 	options {
 		ansiColor('xterm')
@@ -28,21 +27,26 @@ pipeline {
 						sh '''
 							cp /webcompbuild/.env .env
 							rm -rf $(jq -r ".dist.basePath" wcs-manifest.json)
-							echo "HEREMAP_API_KEY=$HEREMAP_API_KEY" >> .env
 						'''
 					}
 				}
 				stage("Dependencies") {
 					steps {
 						sh '''
-							yarn
+							npm install
 						'''
 					}
 				}
+				stage('Test') {
+					steps {
+						sh 'npm run lint'
+						sh 'echo WARNING: npm run test MISSING!'
+					}
+				}				
 				stage("Build") {
 					steps {
 						sh '''
-							yarn build
+							npm run build
 						'''
 					}
 				}
