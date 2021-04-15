@@ -13,12 +13,7 @@ SELECT ?widgetImage ?widgetLabel
 WHERE {
   ?s a schema:SkiResort ;
      schema:name ?widgetLabel ;
-     geo:asWKT ?pos ;
-     schema:geo [ schema:elevation ?maxElevation ] ;
-     schema:image ?widgetImage ;
-     schema:isPartOf ?skiRegion.
-  ?skiRegion a :SkiRegion ;
-     schema:name ?regionName.
+     schema:image ?widgetImage .
 } "></kg-widget>
 </body>
 </html>

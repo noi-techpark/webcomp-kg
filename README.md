@@ -33,9 +33,8 @@ A Web Component `<kg-widget>` with three visualizations (map, table, and image g
     SELECT ?h ?pos ?posLabel ?posColor
     WHERE {
     ?h a schema:LodgingBusiness ;
-       geo:asWKT ?pos ;
-       schema:name ?posLabel ;
-       schema:address ?a .
+       geo:hasGeometry/geo:asWKT ?pos ;
+       schema:name ?posLabel .
   FILTER (lang(?posLabel) = 'de')
   # Colors
   OPTIONAL {
