@@ -1,11 +1,13 @@
 # Web Components for Knowledge Graphs 
 
+[![REUSE status](https://api.reuse.software/badge/github.com/noi-techpark/webcomp-kg)](https://api.reuse.software/info/github.com/noi-techpark/webcomp-kg)
+
 This project is a webcomponent for Knowledge Graphs displaying data starting from a SPARQL endpoint.
 
 The demo shows how we can display the data obtained from the [Open Data Hub SPARQL endpoint](https://sparql.opendatahub.bz.it/)
 in three different formats: gallery, map and table.
 
-Live Demo: <https://raw.githack.com/ontopic-vkg/webcomp-kg/master/example/index.html>
+Live Demo available on our Web Component Store: <https://webcomponents.opendatahub.bz.it/webcomponent/567cb2e2-3e5d-421a-bf85-b8ecc500aab9>
 
 
 ## Table of contents
