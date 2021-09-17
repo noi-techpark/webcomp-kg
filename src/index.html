@@ -18,7 +18,7 @@ SELECT ?widgetImage ?widgetLabel
 WHERE {
   ?s a schema:SkiResort ;
      schema:name ?widgetLabel ;
-     geo:asWKT ?pos ;
+     geo:defaultGeometry/geo:asWKT ?pos ;
      schema:geo [ schema:elevation ?maxElevation ] ;
      schema:image ?widgetImage ;
      schema:isPartOf ?skiRegion.
@@ -31,7 +31,7 @@ WHERE {
     SELECT ?h ?pos ?posLabel ?posColor
     WHERE {
     ?h a schema:LodgingBusiness ;
-       geo:asWKT ?pos ;
+       geo:defaultGeometry/geo:asWKT ?pos ;
        schema:name ?posLabel ;
        schema:address ?a .
   FILTER (lang(?posLabel) = 'de')
@@ -60,7 +60,7 @@ WHERE {
     SELECT ?h ?pos ?posLabel ?posColor
     WHERE {
     ?h a schema:LodgingBusiness ;
-       geo:asWKT ?pos ;
+       geo:defaultGeometry/geo:asWKT ?pos ;
        schema:name ?posLabel ;
        schema:address ?a .
   FILTER (lang(?posLabel) = 'de')
