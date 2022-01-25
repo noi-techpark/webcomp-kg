@@ -25,3 +25,7 @@ Copyright:
     Sarah Komla-Ebri <sarah.komlaebri@ontopic.biz>
     Guohui Xiao <guohui.xiao@ontopic.biz>
 License: CC0-1.0
+
+Files: .github/workflows/ci.yml
+Copyright: (c) 2022 Simon Dalvai <s.dalvai@noi.bz.it>
+License: CC0-1.0
