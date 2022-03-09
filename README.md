@@ -1,7 +1,7 @@
 # Web Components for Knowledge Graphs 
 
 [![REUSE status](https://api.reuse.software/badge/github.com/noi-techpark/webcomp-kg)](https://api.reuse.software/info/github.com/noi-techpark/webcomp-kg)
-[![CI](https://github.com/noi-techpark/webcomp-kg/actions/workflows/ci.yml/badge.svg)](https://github.com/noi-techpark/webcomp-kg/actions/workflows/ci.yml)
+[![CI/CD](https://github.com/noi-techpark/webcomp-kg/actions/workflows/main.yml/badge.svg)](https://github.com/noi-techpark/webcomp-kg/actions/workflows/main.yml)
 
 This project is a webcomponent for Knowledge Graphs displaying data starting from a SPARQL endpoint.
 
