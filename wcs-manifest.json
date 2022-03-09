@@ -3,6 +3,7 @@
   "description": "A webcomponent for showing info from a Knowledge Graph",
   "descriptionAbstract": "A webcomponent for a Knowledge Graph",
   "license": "AGPL-3.0-or-later",
+  "repositoryUrl": "https://github.com/noi-techpark/webcomp-kg.git",
   "copyrightHolders": [
     {
       "name": "NOI",
@@ -31,7 +32,7 @@
       "organizationUrl": "https://ontop-vkg.org"
     }
   ],
-  "image": "wcs-logo.webp",
+  "image": "wcs-logo.png",
   "searchTags": [
     "Knowledge Graph"
   ],
