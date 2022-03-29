@@ -69,10 +69,10 @@
       {
         "key": "query",
         "type": "text",
-        "label": "query examples at https://github.com/noi-techpark/webcomp-kg/tree/master/example",
+        "label": "query examples at https://github.com/noi-techpark/webcomp-kg/tree/prod/example",
         "required": true,
         "options": {
-          "default": "PREFIX schema: <http://schema.org/>  \\n          PREFIX geo: <http://www.opengis.net/ont/geosparql#>  \\n          SELECT ?h ?pos ?posLabel ?posColor ?posIcon  \\n          WHERE {  \\n          ?h a schema:LodgingBusiness ;  \\n             geo:defaultGeometry/geo:asWKT ?pos ;  \\n             schema:name ?posLabel ;  \\n             schema:address ?a .  \\n        FILTER (lang(?posLabel) = 'de')  \\n        # Colors  \\n        OPTIONAL {  \\n        ?h a schema:Campground .  \\n        BIND('chlorophyll,0.5' AS ?posColor) # Green  \\n        }  \\n        OPTIONAL {  \\n        ?h a schema:BedAndBreakfast .  \\n        BIND('viridis,0.1' AS ?posColor) # Purple  \\n        }  \\n        OPTIONAL {  \\n        ?h a schema:Hotel .  \\n        BIND('jet,0.3' AS ?posColor) # Light blue  \\n        }  \\n        OPTIONAL {  \\n        ?h a schema:Hostel .  \\n        BIND('jet,0.8' AS ?posColor) # Red  \\n        }  \\n        OPTIONAL {  \\n        # default  \\n        BIND('jet,0.8' AS ?posColor) # Red  \\n        }  \\n        }  \\n        LIMIT 500"
+          "default": "PREFIX schema: <http://schema.org/>%5Cn          PREFIX geo: <http://www.opengis.net/ont/geosparql#>%5Cn          SELECT ?h ?pos ?posLabel ?posColor ?posIcon%5Cn          WHERE {%5Cn          ?h a schema:LodgingBusiness ;%5Cn             geo:defaultGeometry/geo:asWKT ?pos ;%5Cn             schema:name ?posLabel ;%5Cn             schema:address ?a .%5Cn        FILTER (lang(?posLabel) = 'de')%5Cn        # Colors%5Cn        OPTIONAL {%5Cn        ?h a schema:Campground .%5Cn        BIND('chlorophyll,0.5' AS ?posColor) # Green%5Cn        }%5Cn        OPTIONAL {%5Cn        ?h a schema:BedAndBreakfast .%5Cn        BIND('viridis,0.1' AS ?posColor) # Purple%5Cn        }%5Cn        OPTIONAL {%5Cn        ?h a schema:Hotel .%5Cn        BIND('jet,0.3' AS ?posColor) # Light blue%5Cn        }%5Cn        OPTIONAL {%5Cn        ?h a schema:Hostel .%5Cn        BIND('jet,0.8' AS ?posColor) # Red%5Cn        }%5Cn        OPTIONAL {%5Cn        # default%5Cn        BIND('jet,0.8' AS ?posColor) # Red%5Cn        }%5Cn        }%5Cn        LIMIT 500"
         }
       }
     ]
