@@ -49,6 +49,7 @@
         "key": "view",
         "type": "select",
         "required": true,
+        "label" : "view",
         "options": {
           "values": [
             "gallery",
@@ -62,6 +63,7 @@
         "key": "endpoint",
         "type": "text",
         "required": true,
+        "label": "endpoint",
         "options": {
           "default": "https://sparql.opendatahub.bz.it/sparql"
         }
