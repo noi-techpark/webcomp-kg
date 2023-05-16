@@ -5,10 +5,10 @@
 
 This project is a webcomponent for Knowledge Graphs displaying data starting from a SPARQL endpoint.
 
-The demo shows how we can display the data obtained from the [Open Data Hub SPARQL endpoint](https://sparql.opendatahub.bz.it/)
+The demo shows how we can display the data obtained from the [Open Data Hub SPARQL endpoint](https://sparql.opendatahub.com/)
 in three different formats: gallery, map and table.
 
-Live Demo available on our Web Component Store: <https://webcomponents.opendatahub.bz.it/webcomponent/567cb2e2-3e5d-421a-bf85-b8ecc500aab9>
+Live Demo available on our Web Component Store: <https://webcomponents.opendatahub.com/webcomponent/567cb2e2-3e5d-421a-bf85-b8ecc500aab9>
 
 
 ## Table of contents
@@ -31,7 +31,7 @@ A Web Component `<kg-widget>` with three visualizations (map, table, and image g
   <title>Example Web Components for Knowledge Graphs</title>
   <script src="webcomp-kg.js"></script>
 </head>
-<kg-widget view="map" endpoint='https://sparql.opendatahub.bz.it/sparql' query="PREFIX schema: <http://schema.org/>
+<kg-widget view="map" endpoint='https://sparql.opendatahub.com/sparql' query="PREFIX schema: <http://schema.org/>
     PREFIX geo: <http://www.opengis.net/ont/geosparql#>
     SELECT ?h ?pos ?posLabel ?posColor
     WHERE {
@@ -93,7 +93,7 @@ It is possible to personalize the pointers on the map
 using colors or custom icons as shown in the example for kg-map.
 
 You can run and test SPARQL queries on the endpoint at the [Open Data Hub Knowledge Graph Portal
-](https://sparql.opendatahub.bz.it/).
+](https://sparql.opendatahub.com/).
 
 ## Getting started
 
@@ -207,7 +207,7 @@ docker-compose run --rm app /bin/bash -c "npm run build"
 
 ### Support
 
-For support, please contact [info@opendatahub.bz.it](mailto:info@opendatahub.bz.it).
+For support, please contact [info@opendatahub.com](mailto:info@opendatahub.com).
 
 ### Contributing
 
