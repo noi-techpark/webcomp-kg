@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2021 NOI Techpark <digital@noi.bz.it>
+//
+// SPDX-License-Identifier: CC0-1.0
+
 import { AppPage } from './app.po';
 import { browser, logging } from 'protractor';
 
