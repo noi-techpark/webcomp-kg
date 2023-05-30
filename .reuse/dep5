@@ -3,11 +3,6 @@ Upstream-Name: webcomp-kg
 Upstream-Contact: NOI Techpark <digital@noi.bz.it>
 Source: https://github.com/noi-techpark/webcomp-kg
 
-Files: src/* work/* dist/*.js odh-*.js webcompstore-cli/* example/*
-Copyright: (c) 2021 NOI Techpark <digital@noi.bz.it>
-License: AGPL-3.0-or-later
-
-Files: infrastructure/* .editorconfig .gitignore *.md *.txt .env.* *.yml *.json yarn.lock webpack.* wcs-logo.png browserslist karma.conf.js e2e/*
+Files: .github/* infrastructure/* .gitignore LICENSE.md browserslist *.png *.json *.svg *.ico
 Copyright: (c) NOI Techpark <digital@noi.bz.it>
 License: CC0-1.0
-
