@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2021 NOI Techpark <digital@noi.bz.it>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import {AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {useGeographic} from 'ol/proj';
 import View from 'ol/View';

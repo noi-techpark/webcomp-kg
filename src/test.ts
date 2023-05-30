@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2021 NOI Techpark <digital@noi.bz.it>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 // This file is required by karma.conf.js and loads recursively all the .spec and framework files
 
 import 'zone.js/dist/zone-testing';

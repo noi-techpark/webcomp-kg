@@ -1,13 +1,13 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: webcomp-kg
-Upstream-Contact: Peter Moser <p.moser@noi.bz.it>
+Upstream-Contact: NOI Techpark <digital@noi.bz.it>
 Source: https://github.com/noi-techpark/webcomp-kg
 
 Files: src/* work/* dist/*.js odh-*.js webcompstore-cli/* example/*
-Copyright: (c) 2021 NOI Techpark <info@noi.bz.it>
+Copyright: (c) 2021 NOI Techpark <digital@noi.bz.it>
 License: AGPL-3.0-or-later
 
 Files: infrastructure/* .editorconfig .gitignore *.md *.txt .env.* *.yml *.json yarn.lock webpack.* wcs-logo.png browserslist karma.conf.js e2e/*
-Copyright: (c) 2021 NOI Techpark <info@noi.bz.it>
+Copyright: (c) NOI Techpark <digital@noi.bz.it>
 License: CC0-1.0
 

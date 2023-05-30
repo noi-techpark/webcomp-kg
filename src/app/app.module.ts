@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2021 NOI Techpark <digital@noi.bz.it>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {Injector, NgModule} from '@angular/core';

@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2021 NOI Techpark <digital@noi.bz.it>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {SelectResultSet, SolutionMapping} from '../model/sparql';
