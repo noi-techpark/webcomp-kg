@@ -16,7 +16,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-<kg-widget view="gallery" endpoint='https://sparql.opendatahub.bz.it/sparql' query="PREFIX : <http://noi.example.org/ontology/odh#>
+<kg-widget view="gallery" endpoint='https://sparql.opendatahub.com/sparql' query="PREFIX : <http://noi.example.org/ontology/odh#>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX schema: <http://schema.org/>
 
@@ -32,7 +32,7 @@ WHERE {
      schema:name ?regionName.
 } "></kg-widget>
 
-<kg-widget view="table" endpoint='https://sparql.opendatahub.bz.it/sparql' query="PREFIX schema: <http://schema.org/>
+<kg-widget view="table" endpoint='https://sparql.opendatahub.com/sparql' query="PREFIX schema: <http://schema.org/>
     PREFIX geo: <http://www.opengis.net/ont/geosparql#>
     SELECT ?h ?pos ?posLabel ?posColor
     WHERE {
@@ -61,7 +61,7 @@ WHERE {
   }
   LIMIT 500"></kg-widget>
 
-<kg-widget view="map" endpoint='https://sparql.opendatahub.bz.it/sparql' query="PREFIX schema: <http://schema.org/>
+<kg-widget view="map" endpoint='https://sparql.opendatahub.com/sparql' query="PREFIX schema: <http://schema.org/>
     PREFIX geo: <http://www.opengis.net/ont/geosparql#>
     SELECT ?h ?pos ?posLabel ?posColor
     WHERE {

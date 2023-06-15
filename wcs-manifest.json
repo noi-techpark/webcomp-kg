@@ -65,7 +65,7 @@
         "required": true,
         "label": "endpoint",
         "options": {
-          "default": "https://sparql.opendatahub.bz.it/sparql"
+          "default": "https://sparql.opendatahub.com/sparql"
         }
       },
       {
