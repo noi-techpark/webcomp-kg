@@ -19,6 +19,7 @@ jobs:
         with:
           build-command: npm run build
           node-version: ${{env.NODE_VERSION}}
+      - uses: noi-techpark/github-actions/webcomp-test@v2
 
   deploy-test:
     runs-on: ubuntu-20.04
