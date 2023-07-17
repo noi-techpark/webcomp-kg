@@ -6,7 +6,7 @@ SPDX-License-Identifier: CC0-1.0
 
 # Web Components for Knowledge Graphs 
 
-![REUSE Compliance](https://github.com/noi-techpark/webcomp-kg/actions/workflows/reuse.yml/badge.svg)
+[![REUSE Compliance](https://github.com/noi-techpark/webcomp-kg/actions/workflows/reuse.yml/badge.svg)](https://github.com/noi-techpark/odh-docs/wiki/REUSE#badges)
 [![REUSE status](https://api.reuse.software/badge/github.com/noi-techpark/webcomp-kg)](https://api.reuse.software/info/github.com/noi-techpark/webcomp-kg)
 [![CI/CD](https://github.com/noi-techpark/webcomp-kg/actions/workflows/main.yml/badge.svg)](https://github.com/noi-techpark/webcomp-kg/actions/workflows/main.yml)
 
